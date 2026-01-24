@@ -8,6 +8,7 @@ import { Carousel } from '@/components/carousel'
 import { CategoryTabs } from '@/components/category-tabs'
 import { useState } from 'react'
 import Image from 'next/image'
+import { AlarmClock } from 'lucide-react'
 
 const latestArticles = [
   {
@@ -149,11 +150,11 @@ export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState('ALL')
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gray-200">
       <Navbar />
 
       {/* Main Content */}
-      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 bg-gray-200 w-full">
+      <main className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {/* Unified Responsive Layout */}
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3 lg:grid-cols-4">
           {/* Left Sidebar - Hidden on mobile */}
@@ -301,7 +302,7 @@ export default function Home() {
           </div>
 
           {/* Right Sidebar - Desktop only */}
-          <div className="hidden space-y-8 lg:col-span-1 lg:block">
+          <div className=" space-y-8 lg:col-span-1 lg:block">
             {/* Featured Opinion */}
             <div className="overflow-hidden bg-car h-85 bg-white">
               <div className="relative">
@@ -318,13 +319,17 @@ export default function Home() {
               </div>
               <div className="p-4">
                 <h3 className="mb-2 text-sm font-bold">Democratic Party politician calls Prabowo 'cardboard general'</h3>
-                <p className="text-xs text-muted-foreground">by <span className="font-semibold">JOHN DOE</span> • August 10, 2018</p>
+                <div className='flex items-center gap-1'>
+                  <p className="text-xs text-muted-foreground">by <span className="font-semibold">JOHN DOE</span></p>
+                  <AlarmClock className='inline w-3 h-3 mx-1'/>
+                  <p  className="text-xs text-muted-foreground"> August 10, 2018</p>
+                </div>
                 <p className="mt-2 text-xs text-muted-foreground">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life...</p>
               </div>
             </div>
 
             {/* Lifestyle Article */}
-            <div className="overflow-hidden h-85 bg-white">
+            <div className="overflow-hidden b-car h-85 bg-white">
               <div className="relative">
                 <Image
                   src="demo-49.jpg"
@@ -339,30 +344,13 @@ export default function Home() {
               </div>
               <div className="p-4">
                 <h3 className="mb-2 text-sm font-bold">Google tracks location data even when users turn service off</h3>
-                <p className="text-xs text-muted-foreground">by <span className="font-semibold">JOHN DOE</span> • August 14, 2018</p>
+                <div className='flex items-center gap-1'>
+                  <p className="text-xs text-muted-foreground">by <span className="font-semibold">JOHN DOE</span></p>
+                  <AlarmClock className='inline w-3 h-3 mx-1'/>
+                  <p  className="text-xs text-muted-foreground"> August 10, 2018</p>
+                </div>
                 <p className="mt-2 text-xs text-muted-foreground">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life...</p>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Opinion Card */}
-        <div className="mt-6 md:hidden">
-          <div className="relative overflow-hidden bg-card">
-            <Image
-              src='/demo-24.jpg'
-              alt="Opinion"
-              className="h-48 w-full object-cover"
-              width={400}
-              height={300}
-            />
-            <div className="absolute right-3 top-3 bg-accent px-2 py-1 text-xs font-bold text-accent-foreground">
-              OPINION
-            </div>
-            <div className="p-4">
-              <h3 className="mb-2 text-sm font-bold">Democratic Party politician calls Prabowo 'cardboard general'</h3>
-              <p className="text-xs text-muted-foreground">by JOHN DOE • August 10, 2018</p>
-              <p className="mt-2 text-xs text-muted-foreground">Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life...</p>
             </div>
           </div>
         </div>
