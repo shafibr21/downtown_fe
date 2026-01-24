@@ -33,7 +33,7 @@ export function Carousel({ items }: CarouselProps) {
       {/* Left Arrow */}
       <button
         onClick={handlePrev}
-        className="absolute left-0 top-1/2 z-10 flex border border-gray-400 w-7 -translate-y-1/2 items-center justify-center bg-white shadow-sm hover:bg-gray-50 md:h-25 h-20"
+        className="absolute left-0 top-1/2 z-10 flex border border-gray-400 w-7 -translate-y-1/2 items-center justify-center bg-white shadow-sm hover:bg-gray-50 lg:h-25 md:h-20 h-15"
         aria-label="Previous"
       >
         <ChevronLeft className="h-5 w-5 text-gray-700" strokeWidth={2} />
@@ -53,7 +53,7 @@ export function Carousel({ items }: CarouselProps) {
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="flex flex-1 items-center">
+            <div className="flex flex-1 items-center h-20">
               <h3 className="text-xs font-semibold leading-tight text-gray-900">
                 {items[currentIndex].title}
               </h3>
@@ -64,7 +64,7 @@ export function Carousel({ items }: CarouselProps) {
         {/* Desktop View - Grid of all items */}
         <div className="hidden md:grid md:grid-cols-3 md:gap-4">
           {items.map((item) => (
-            <div key={item.id} className="flex gap-3 bg-white">
+            <div key={item.id} className="flex gap-3 bg-white h-20">
               <div className="p-1 h-16 w-16 shrink-0 overflow-hidden">
                 <Image
                   src={item.image || "/placeholder.svg"}
@@ -74,7 +74,7 @@ export function Carousel({ items }: CarouselProps) {
                   className="h-full w-full object-cover"
                 />
               </div>
-              <div className="flex flex-1 items-center">
+              <div className="flex flex-1 items-center h-20">
                 <h3 className="text-xs font-semibold leading-tight text-gray-900">
                   {item.title}
                 </h3>
@@ -87,7 +87,7 @@ export function Carousel({ items }: CarouselProps) {
       {/* Right Arrow */}
       <button
         onClick={handleNext}
-        className="absolute right-0 top-1/2 z-10 flex border border-gray-400 w-7 -translate-y-1/2 items-center justify-center bg-white shadow-sm hover:bg-gray-50 md:h-25 h-20"
+        className="absolute right-0 top-1/2 z-10 flex border border-gray-400 w-7 -translate-y-1/2 items-center justify-center bg-white shadow-sm hover:bg-gray-50 lg:h-25 md:h-20 h-15"
         aria-label="Next"
       >
         <ChevronRight className="h-5 w-5 text-gray-700" strokeWidth={2} />
